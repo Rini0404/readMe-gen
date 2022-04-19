@@ -4,24 +4,7 @@ const markdown = require('generateMarkdown')
 
 
 
-const readMeF = (answers) => {`
-  ##Title of Project: 
-    ${answers.title} 
-  ##Table of Content
-    [Title](#title)
-    [Description](#description)0
-    [Deplpoyed Picture](#picture)
-    [My Repo](#repo)
-    [Live Link](#live)
-    [Instillation](#installition)
-    [Your Steps](#steps)
-    [Used Languages](#languages)
-    [Contributers to the project](#contributors)
-    [Future Plans](#future)
-    [Licenses](#license)
-    [Badgesbadges](#)
-
-`; 
+const readMeF = (answers) => 
 
 // using inquirer 
   inquirer
@@ -58,7 +41,7 @@ const readMeF = (answers) => {`
     },
     { 
       type:'input',
-      name:'steps',
+      name:'usage',
       question:'What is a step by step guide?'
     },
     { 
@@ -81,11 +64,51 @@ const readMeF = (answers) => {`
       name:'license',
       question:'The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).',
       choices:['None', 'ISC', 'Mozilla', 'MIT']
-    },
-    { 
-      type:'input',
-      name:'badges',
-      question:`What badges did you get?`
-    },
+    }
   ])
-}
+
+  ` ##Title of Project: 
+    ${answers.title} 
+  ##Table of Content
+    [Title](#title)
+    [Description](#description)
+    [Deplpoyed Picture](#picture)
+    [My Repo](#repo)
+    [Live Link](#live)
+    [Instillation](#installition)
+    [Usage](#usage)
+    [Languages](#languages)
+    [Contributers to the project](#contributors)
+    [Future](#future)
+    [Licenses](#license)
+
+  ## Title
+  ${answers.title}
+  ## Picture
+  ${answers.picture}
+  ## Description
+  ${answers.description}
+  ## My Repo
+  [Repo](${answers.repo})
+  ## Live Link
+  ${answers.live}
+  ## Instillation
+  ${answers.instillation}
+  ## Steps
+  ${answers.usage}
+  ## Languages
+  ${answers.languages}
+  ## Contributors to the project
+  ${answers.contributors}
+  ## Future
+  ${answers.future}
+  ## Licenses
+  ${markdown.renderLicenseBadge(answers.license)}
+  `
+
+  .then((answers) => {
+    const readMe = readMeF(answers); // readMe is now the answers 
+    fs.writeFile('ReadMe.md', renderPage, err => 
+      err ? console.log(err) : console.log('You have now made your Read ME file!')
+    )}); 
+
