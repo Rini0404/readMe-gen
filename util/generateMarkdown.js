@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
+function licenseBadge(license) {
   if (license === 'ISC') {
     return `[]`
   } if (license === 'MoZilla'){
@@ -26,4 +26,4 @@ function renderLicenseBadge(license) {
 // `;
 // }
 
-module.exports = renderLicenseBadge;
+module.exports = {licenseBadge};
