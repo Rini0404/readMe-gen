@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const markdown = require('./util/generateMarkdown')
+const license = require('./util/generateMarkdown')
 const fs = require('fs')
 const inquirer = require('inquirer')
 
@@ -101,7 +101,7 @@ const readMeF = (answers) =>
   ## Future
   ${answers.future}
   ## Licenses
-  ![badge](https://img.shields.io/badge/license-${markdown.renderLicenseBadge(answers.license)}
+  ![badge](https://img.shields.io/badge/license-${license.renderLicenseBadge(answers.license)}
   `
 
   .then((answers) => {
