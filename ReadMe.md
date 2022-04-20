@@ -3,17 +3,17 @@
 ## Title of Project: 
 # Read Me Generator! 
 ## Table of Content
-[Title](#title)
-[Description](#description)
-[Deplpoyed Picture](#picture)
-[My Repo](#repo)
-[Live Link](#live)
-[installation](#installation)
-[Usage](#usage)
-[Languages](#languages)
-[Contributers to the project](#contributors)
-[Future](#future)
-[Licenses](#license)
+-[Title](#title)
+-[Description](#description)
+-[Deplpoyed Picture](#picture)
+-[My Repo](#repo)
+-[Live Link](#live)
+-[installation](#installation)
+-[Usage](#usage)
+-[Languages](#languages)
+-[Contributers to the project](#contributors)
+-[Future](#future)
+-[Licenses](#license)
 
 # 🎟Title
 ## Read Me Generator!
