@@ -41,4 +41,47 @@ function renderLicenseSection(license) {
   }
 }
 
+function generateMarkdown(answers) {
+  return `
+
+## Title of Project: 
+# ${answers.title} 
+## Table of Content
+[Title](#title)
+[Description](#description)
+[Deplpoyed Picture](#picture)
+[My Repo](#repo)
+[Live Link](#live)
+[installation](#installation)
+[Usage](#usage)
+[Languages](#languages)
+[Contributers to the project](#contributors)
+[Future](#future)
+[Licenses](#license)
+
+# 🎟Title
+## ${answers.title}
+# 🖼Picture
+## ${answers.picture}
+# 📖Description
+## ${answers.description}
+# 🔎My Repo
+## [Repo](${answers.repo})
+# 🖇Live Link
+## ${answers.live}
+# 📌installation
+## ${answers.installation}
+# 📝Steps
+## ${answers.usage}
+# 📟Languages
+## ${answers.languages}
+# 🎭Contributors to the project
+## ${answers.contributors}
+# 🧰Future
+## ${answers.future}
+# 🎖Licenses
+## ${renderLicenseLink(answers.license)}`;
+}
+
+
 module.exports = generateMarkdown;

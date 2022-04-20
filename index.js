@@ -3,47 +3,7 @@ const markdown = require('./utils/generateMarkdown')
 const fs = require('fs')
 const inquirer = require('inquirer')
 
-const readMeF = (answers) => 
 
-  ` ##Title of Project: 
-    ${answers.title} 
-  ##Table of Content
-    [Title](#title)
-    [Description](#description)
-    [Deplpoyed Picture](#picture)
-    [My Repo](#repo)
-    [Live Link](#live)
-    [Instillation](#installition)
-    [Usage](#usage)
-    [Languages](#languages)
-    [Contributers to the project](#contributors)
-    [Future](#future)
-    [Licenses](#license)
-
-  ## Title
-  ${answers.title}
-  ## Picture
-  ${answers.picture}
-  ## Description
-  ${answers.description}
-  ## My Repo
-  [Repo](${answers.repo})
-  ## Live Link
-  ${answers.live}
-  ## Instillation
-  ${answers.instillation}
-  ## Steps
-  ${answers.usage}
-  ## Languages
-  ${answers.languages}
-  ## Contributors to the project
-  ${answers.contributors}
-  ## Future
-  ${answers.future}
-  ## Licenses
-  ${markdown.generateMarkdown(answers.license)}
-
-  `;
 // using inquirer 
 
  inquirer.prompt([
@@ -74,7 +34,7 @@ const readMeF = (answers) =>
     },
     { 
       type:'input',
-      name:'installition',
+      name:'installation',
       question:'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.'
     },
     { 
@@ -107,8 +67,7 @@ const readMeF = (answers) =>
 
 
   .then((answers) => {
-    const newReadMe = readMeF(answers); // readMe is now the answers 
-    fs.writeFile('ReadMe.md', newReadMe, err => 
+    fs.writeFile('./ReadMe.md', markdown(answers), err => 
       err ? console.log(err) : console.log('You have now made your Read ME file!')
     )}); 
 
