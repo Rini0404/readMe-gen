@@ -1,12 +1,52 @@
 // TODO: Include packages needed for this application
-const license = require('./util/generateMarkdown')
+const markdown = require('./utils/generateMarkdown')
 const fs = require('fs')
 const inquirer = require('inquirer')
 
 const readMeF = (answers) => 
 
+  ` ##Title of Project: 
+    ${answers.title} 
+  ##Table of Content
+    [Title](#title)
+    [Description](#description)
+    [Deplpoyed Picture](#picture)
+    [My Repo](#repo)
+    [Live Link](#live)
+    [Instillation](#installition)
+    [Usage](#usage)
+    [Languages](#languages)
+    [Contributers to the project](#contributors)
+    [Future](#future)
+    [Licenses](#license)
+
+  ## Title
+  ${answers.title}
+  ## Picture
+  ${answers.picture}
+  ## Description
+  ${answers.description}
+  ## My Repo
+  [Repo](${answers.repo})
+  ## Live Link
+  ${answers.live}
+  ## Instillation
+  ${answers.instillation}
+  ## Steps
+  ${answers.usage}
+  ## Languages
+  ${answers.languages}
+  ## Contributors to the project
+  ${answers.contributors}
+  ## Future
+  ${answers.future}
+  ## Licenses
+  ${markdown.generateMarkdown(answers.license)}
+
+  `;
 // using inquirer 
-  inquirer.prompt([
+
+ inquirer.prompt([
     { 
       type:'input',
       name:'title',
@@ -65,50 +105,14 @@ const readMeF = (answers) =>
     }
   ])
 
-  ` ##Title of Project: 
-    ${answers.title} 
-  ##Table of Content
-    [Title](#title)
-    [Description](#description)
-    [Deplpoyed Picture](#picture)
-    [My Repo](#repo)
-    [Live Link](#live)
-    [Instillation](#installition)
-    [Usage](#usage)
-    [Languages](#languages)
-    [Contributers to the project](#contributors)
-    [Future](#future)
-    [Licenses](#license)
-
-  ## Title
-  ${answers.title}
-  ## Picture
-  ${answers.picture}
-  ## Description
-  ${answers.description}
-  ## My Repo
-  [Repo](${answers.repo})
-  ## Live Link
-  ${answers.live}
-  ## Instillation
-  ${answers.instillation}
-  ## Steps
-  ${answers.usage}
-  ## Languages
-  ${answers.languages}
-  ## Contributors to the project
-  ${answers.contributors}
-  ## Future
-  ${answers.future}
-  ## Licenses
-  ![badge](https://img.shields.io/badge/license-${license.renderLicenseBadge(answers.license)}
-  `
 
   .then((answers) => {
-    const readMe = readMeF(answers); // readMe is now the answers 
-    fs.writeFile('ReadMe.md', readMe, err => 
+    const newReadMe = readMeF(answers); // readMe is now the answers 
+    fs.writeFile('ReadMe.md', newReadMe, err => 
       err ? console.log(err) : console.log('You have now made your Read ME file!')
     )}); 
 
-console.log(readMeF);
+
+    
+
 
