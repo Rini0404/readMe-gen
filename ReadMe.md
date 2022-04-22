@@ -18,7 +18,7 @@
 # 🎟Title
 ## Read Me Generator!
 # 🖼Picture
-## n/a
+## ![img] (./img/Capture.png)
 # 📖Description
 ## If you are stuck and are in need of a template to write out your read me.... Look no more! This readMe.Md generator is meant to be pluged in and help!
 # 🔎My Repo
