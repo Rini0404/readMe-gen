@@ -16,7 +16,8 @@
 # 🎟Title
 ## Read Me Generator!
 # 🖼Picture
-## ![img] (./img/Capture.png)
+## ![Capture](https://user-images.githubusercontent.com/95727555/164768217-c6c79296-a5da-4a7a-b13c-739089401172.PNG)
+
 # 📖Description
 ## If you are stuck and are in need of a template to write out your read me.... Look no more! This readMe.Md generator is meant to be pluged in and help!
 # 🔎My Repo
